@@ -1,7 +1,7 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
-moduel.export = {
+module.exports = {
   "development": {
     "username": "root",
     "password": process.env.DB_PASSWORD,

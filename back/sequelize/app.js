@@ -8,7 +8,8 @@ const { sequelize } = require('./models');
 const app = express();
 app.set('port', process.env.PORT || 3065);
 
-// sequelize 연결하는 코드
+// sequelize 모델을 생성하거나 있는지 확인하는 코드
+// https://sequelize.org/docs/v6/core-concepts/model-basics/
 sequelize.sync({ force: false })
   .then(() => {
     console.log('데이터베이스 연결 성공');
