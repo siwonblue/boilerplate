@@ -17,7 +17,7 @@ $npm i nodemon -D
 ```bash
 $npx sequelize init
 ```
-명령어 치고 나면 파일 생김
+명령어 치고 나면 자동으로 파일 생성
 
 ├── config  
 ├── migrations  
@@ -26,7 +26,7 @@ $npx sequelize init
 ├── app.js  
 
 
-config : json 파일  
+config : json 파일  => js 로 바꾸고 환경 변수 사용  
 models : 모델 연결 설정
 
 
@@ -70,4 +70,32 @@ $node app.js
 3065 번 포트에서 대기 중
 Executing (default): SELECT 1+1 AS result
 데이터베이스 연결 성공
+```
+
+
+
+# 모델 설정
+
+자세한 설명
+https://sequelize.org/docs/v6/core-concepts/model-basics/
+
+기본꼴은 다음과 같음
+- init({},{}) 두 개의 객체에
+컬럼 정의하고 옵션 넣어주면 됨
+- static associate(db) 은 참조하는 모델 설정
+
+```js
+const Sequelize = require('sequelize');
+
+module.exports = class User extends Sequelize.Model {
+  static init(sequelize) {
+    return super.init(
+    { }, { }
+      );
+  }
+
+  static associate(db) {
+   
+  }
+};
 ```
